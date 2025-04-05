@@ -1,0 +1,17 @@
+{
+    "name": "2025-pycon-austria-demystifying-python-modules",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "slidev build",
+        "dev": "slidev --open",
+        "export": "slidev export"
+    },
+    "dependencies": {
+        "@slidev/cli": "^51.5.0",
+        "@slidev/theme-default": "latest",
+        "@slidev/theme-seriph": "latest",
+        "slidev-theme-the-unnamed": "^0.0.22",
+        "vue": "^3.5.13"
+    }
+}
