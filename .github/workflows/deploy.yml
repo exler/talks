@@ -27,18 +27,22 @@ jobs:
               name: Install bun
               with:
                   bun-version: "1.2.4"
-            - name: Install dependencies
+            - name: Install and build PyCon Austria 2025 slides
               run: |
                 cd 2025-pycon-austria-demystifying-python-modules
                 bun install --frozen-lockfile
-            - name: Build site
+                bun run build
+            - name: Install and build Django Vienna 2025 slides
               run: |
-                cd 2025-pycon-austria-demystifying-python-modules
+                cd 2025-django-vienna-zero-downtime-migrations
+                bun install --frozen-lockfile
                 bun run build
             - name: Move build output
               run: |
                 mkdir -p gh-pages/2025-pycon-austria
+                mkdir -p gh-pages/2025-django-vienna
                 mv 2025-pycon-austria-demystifying-python-modules/dist/* gh-pages/2025-pycon-austria/
+                mv 2025-django-vienna-zero-downtime-migrations/dist/* gh-pages/2025-django-vienna/
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
